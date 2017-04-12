@@ -205,6 +205,7 @@ function createEmployeeObject(array){
   var name = array[0];
   var employeeNumber = array[1];
   var salary = array[2];
+  //Do things
 }
 
 createEmployeeObject(atticus);
@@ -214,7 +215,7 @@ In the above example, we see the array of information passed into the function c
 ```javascript 
 let atticus = ["Atticus", 392811, 94000];
 
-function createEmployeeObject(name = 'Un-named', employeeNumber = '00000', salary = '10000'){
+function createEmployeeObject(name = 'Un-named', employeeNumber = '00000', salary = '10000', ...extras){
   //Do things
 }
 
