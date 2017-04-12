@@ -193,3 +193,30 @@ function restFunction(instructor = "Unassigned", ...list){
 
 restFunction("Scott", "Fred", "Mark", "Taylor", "Chris");
 ```
+
+## Spread Operators
+Spread operators have a similar syntax as rest parameters, however instead of using the `...` syntax in a function argument, we use it in the function call. The functional difference is that it take an array of values and sends them to the function as individual arguments into the function.
+
+Consider this:
+```javascript
+let atticus = ["Atticus", 392811, 94000];
+
+function createEmployeeObject(array){
+  var name = array[0];
+  var employeeNumber = array[1];
+  var salary = array[2];
+}
+
+createEmployeeObject(atticus);
+```
+
+In the above example, we see the array of information passed into the function call, then inside the function the array is accepted. That array is then used to assign value to variables created in the function. As we have seen in ES6 before, we know that this pattern of boilerplate variable assignment is not ideal. So instead, we can pair up the spread operator with stated arguments. For example:
+```javascript 
+let atticus = ["Atticus", 392811, 94000];
+
+function createEmployeeObject(name = 'Un-named', employeeNumber = '00000', salary = '10000'){
+  //Do things
+}
+
+createEmployeeObject(...atticus);
+```
