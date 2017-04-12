@@ -100,3 +100,7 @@ processArray( undefined ); //cannot read property '.length' of undefined.
 ```
 
 The error of `cannot read property '.length' of undefined` comes from the fact that we are trying to read .length within the console log, not that we passed in nothing or undefined itself. Actually passing the arguments or not is something that Javascript allows us to do. 
+
+## Default Parameter Values
+We can now create and assign default parameters to our function arguments! If the value is supplied, it supplied value will override the default set. We simply assign the default value in the `function signature`. For example `function processArray(array = []){...}`
+
