@@ -4,7 +4,7 @@
 Let is a new way to declare variables and have them scoped to the nearest code block (and not to the nearest function, as with the standard `var` declaration). 
 
 Consider this:
-```
+```javascript
 function regularFunction(){
   if(true){
     var trueBlockVariable = "Hello";
@@ -23,7 +23,7 @@ The reason for this is because of the 'var' declaration and hoisting. Hoisting w
 The answer of course, is a `let` declaration.
 
 Consider this:
-```
+```javascript
 function regularFunction(){
   if(true){
     let trueBlockVariable = "Hello";
@@ -47,7 +47,7 @@ This will produce an error of 'not defined'. This matches our expectation of wha
 Const declarations allow us to create variables that cannot change. Which on the surface seems like a bad idea, but it allows us to constrain and address 'magic numbers'. 
 
 Consider this example that checks the number of toppings on a pizza order. If its over three toppings, then it does not qualify for a special:
-```
+```javascript
 var numOfToppings = 4;
 
 if(numOfToppings > 3){
@@ -61,8 +61,7 @@ The problem in the above, is that the number '3' would be a complete mystery wit
 
 Finally, naming convention for `const` variables uses capital letters with underscores in between. So for our pizza deal declaration, we would use something like this: `const TOPPINGS_FOR_DEAL`
 
-
-```
+```javascript
 let numOfToppings = 4;
 const TOPPINGS_FOR_DEAL = 3; 
 
@@ -79,7 +78,7 @@ The code is now more readable in terms of being able to look at the code and qui
 * Ensure that students understand what a Magic Number is. And even though it has a good name, its actually a bad thing,
 * Sell the idea of code readability here, restate the if statement out load, pointing to the variables. Example "If the number of toppings is greater than the toppings for the deal, then...",
 * Demonstrate that you cannot change the value of a const. Like the example below:
-```
+```javascript
 const SOME_CONST = 6;
 SOME_CONST = 5;
 ```
@@ -88,7 +87,7 @@ SOME_CONST = 5;
 Javascript is very flexible when it comes to working with arguments within functions. We can pass in extra arguments or even omit arguments all together on functions that would normally accept arguments. In these cases, Javascript will not produce errors. 
 
 Consider this:
-```
+```javascript
 function processArray(array){
   console.log(array.length);
   //do things to the array
@@ -104,3 +103,14 @@ The error of `cannot read property '.length' of undefined` comes from the fact t
 ## Default Parameter Values
 We can now create and assign default parameters to our function arguments! If the value is supplied, it supplied value will override the default set. We simply assign the default value in the `function signature`. For example `function processArray(array = []){...}`
 
+Looking at the previous example, we can see how the logs will now be different:
+```javascript
+function processArray(array){
+  console.log(array.length);
+  //do things to the array
+}
+
+processArray( [1,2,3] ); // logs '3'
+processArray( ); logs '0'
+processArray( undefined ); //cannot read property '.length' of undefined.
+```
