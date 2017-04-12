@@ -74,3 +74,13 @@ if(numOfToppings > TOPPINGS_FOR_DEAL){
 ```
 
 The code is now more readable in terms of being able to look at the code and quickly infer what the code is doing. Additionally, we know with the naming convention that the `TOPPINGS_FOR_DEAL` is a constant and that the value cannot be changed. 
+
+### Instructor Notes
+* Ensure that students understand what a Magic Number is. And even though it has a good name, its actually a bad thing,
+* Sell the idea of code readability here, restate the if statement out load, pointing to the variables. Example "If the number of toppings is greater than the toppings for the deal, then...",
+* Demonstrate that you cannot change the value of a const. Like the example below:
+```
+const SOME_CONST = 6;
+SOME_CONST = 5;
+```
+
