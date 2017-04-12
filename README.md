@@ -134,7 +134,7 @@ function setupUser(configObject){
 setupUser({name: "Scott", admin: true});
 ```
 
-From what we learned about default parameters, we may be tempted to additionally use a default value for the `configObject` to at least check whether or not the supplied argument is an object. Which might look something like this:
+From what we learned about default parameters, we may be tempted to additionally use a default value for the `configObject` to at least check whether or not the supplied argument is an object. Problem is, we are still writting assignment code, Which might look something like this:
 ```
 function setupUser(configObject = {}){
   var name = configObject.name;
