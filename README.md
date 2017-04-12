@@ -1,6 +1,6 @@
 # ES6 / ES 2015
 
-## let
+## LET Declarations
 Let is a new way to declare variables and have them scoped to the nearest code block (and not to the nearest function, as with the standard `var` declaration). 
 
 Consider this:
