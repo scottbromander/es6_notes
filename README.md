@@ -215,9 +215,22 @@ In the above example, we see the array of information passed into the function c
 ```javascript 
 let atticus = ["Atticus", 392811, 94000];
 
-function createEmployeeObject(name = 'Un-named', employeeNumber = '00000', salary = '10000', ...extras){
+function createEmployeeObject(name = 'Un-named', employeeNumber = '00000', salary = '10000'){
   //Do things
 }
 
 createEmployeeObject(...atticus);
+```
+
+In the example above, we can see that the variable creation is handled in the function signature. The spread operator can them seperate them into different arguments. Additionally, we can pair both the rest and spread operator together for some great flexibility. Run the following code and notice how the console logs are different:
+```javascript
+let atticus = ["Atticus", 392811, 94000];
+
+function createEmployeeObject(name = 'Un-named', employeeNumber = '00000', salary = '10000', ...extras){
+    console.log(name, employeeNumber, salary);
+    console.log(extras);
+    console.log(...extras);
+}
+
+createEmployeeObject(...atticus, 4, 5, 6);
 ```
