@@ -36,3 +36,16 @@ function regularFunction(){
 ```
 
 This will produce an error of 'not defined'. This matches our expectation of what we would see in other programming languages. 
+
+### Instructor Notes
+* Make sure that students really understand scope,
+* Make sure that the students understand the difference between 'undefined' and 'not defined',
+* One of the considerations that need to be made is whether or not an error is actually better than undefined for the need of the application.
+
+## CONST Declarations
+
+Const declarations allow us to create variables that cannot change. Which on the surface seems like a bad idea, but it allows us to constrain and address 'magic numbers'. 
+
+Consider this:
+```
+var 
