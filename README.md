@@ -234,3 +234,50 @@ function createEmployeeObject(name = 'Un-named', employeeNumber = '00000', salar
 
 createEmployeeObject(...atticus, 4, 5, 6);
 ```
+
+## Arrow Functions and Lexical Binding
+Arrow functions is one of the most exciting new features of ES6. At first glance, it seems like a fancy new way to create functions. But below the surface, is a very important consideration around the binding of 'this' as it relates to method calls. But more on that in a second.
+
+Lets take a look at the same function, defined in both ES5 and ES6:
+```javascript
+// ES5
+var normalFunction = function(){
+  console.log("Normal function");
+}
+
+//ES6
+var arrowFunction = () => {
+  console.log("Arrow function");
+}
+```
+
+First thing we notice is how the function is actually defined. Instead of using the keyword `function`, we use a set of `( )` followed by a `=>` then the regular code block. At a closer look, the other thing that we see, is that we need to use function expressions and anonymous functions to properly set up an arrow function in this regard.
+
+Let's look at the same example, but with an argument in the function as well:
+```javascript
+// ES5
+var normalFunction = function(message){
+  console.log("Normal function: ", message);
+}
+
+//ES6
+var arrowFunction = (message) => {
+  console.log("Arrow function: ", message);
+}
+```
+Now the short creation of functions is cool, but not the only point of arrow functions. One of the most common problems in Javascript, is the creation of Objects that have methods. More specifically, how that method is able to access the objects properties to which the method belongs. Let's look at an example of the problem below in ES5:
+```javascript
+function PersonES5() {
+			  var that = this; // We need to bind 'this' to a new variable to preserve the context of 'this' for use inside the method.
+			  that.age = 0;
+
+			  setInterval(function growUp() {
+			    // The callback refers to the `that` variable of which
+			    // the value is the expected object.
+			    that.age++; // This iterates the value of 'age' properly on the object.
+			    console.log(that.age); // We can see that this increments correctly.
+			    this.age++; // This produces NaN
+			    console.log(this.age, this); // We discover that 'this' inside the method has a new context. That to the window.
+			  }, 1000);
+			}
+```
