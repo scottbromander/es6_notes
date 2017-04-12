@@ -268,16 +268,36 @@ var arrowFunction = (message) => {
 Now the short creation of functions is cool, but not the only point of arrow functions. One of the most common problems in Javascript, is the creation of Objects that have methods. More specifically, how that method is able to access the objects properties to which the method belongs. Let's look at an example of the problem below in ES5:
 ```javascript
 function PersonES5() {
-			  var that = this; // We need to bind 'this' to a new variable to preserve the context of 'this' for use inside the method.
-			  that.age = 0;
+  var that = this; // We need to bind 'this' to a new variable to preserve the context of 'this' for use inside the method.
+  that.age = 0;
 
-			  setInterval(function growUp() {
-			    // The callback refers to the `that` variable of which
-			    // the value is the expected object.
-			    that.age++; // This iterates the value of 'age' properly on the object.
-			    console.log(that.age); // We can see that this increments correctly.
-			    this.age++; // This produces NaN
-			    console.log(this.age, this); // We discover that 'this' inside the method has a new context. That to the window.
-			  }, 1000);
-			}
+  setInterval(function growUp() {
+    // The callback refers to the `that` variable of which
+    // the value is the expected object.
+    that.age++; // This iterates the value of 'age' properly on the object.
+    console.log(that.age); // We can see that this increments correctly.
+    this.age++; // This produces NaN
+    console.log(this.age, this); // We discover that 'this' inside the method has a new context. That to the window.
+  }, 1000);
+}
+
+var scott = new PersonES5();
 ```
+
+### Lexical Binding
+In the previous example, we observed that once we were inside the method of the object, the context of `this` shifted from the object, to the window, as that is where the function is technically called. Something that we would not expect. Luckily, with Arrow Functions, it preserves the context of `this` to what we would expect. So lets look at how we can hook into Arrow Functions to help with the example from above, rewritten with ES6 and Arrow Functions:
+```javascript
+function PersonES6(){
+  this.age = 0;
+
+  setInterval(() => {
+    this.age++; // |this| properly refers to the person object.
+    console.log(this); // Iterates the age of the Person object as we would hope.
+  }, 1000);
+}
+
+var scott = new PersonES6();
+```
+Arrow functions bind to the scope of where they are defined, not where we are used. This is known as `Lexical Binding`.  
+
+
