@@ -75,8 +75,8 @@ if(numOfToppings > TOPPINGS_FOR_DEAL){
 The code is now more readable in terms of being able to look at the code and quickly infer what the code is doing. Additionally, we know with the naming convention that the `TOPPINGS_FOR_DEAL` is a constant and that the value cannot be changed. 
 
 ### Instructor Notes
-* Ensure that students understand what a Magic Number is. And even though it has a good name, its actually a bad thing,
-* Sell the idea of code readability here, restate the if statement out load, pointing to the variables. Example "If the number of toppings is greater than the toppings for the deal, then...",
+* Ensure that students understand what a Magic Number is. And even though it has a good name, it's actually a bad thing,
+* Sell the idea of code readability here, restate the if statement out loud, pointing to the variables. Example "If the number of toppings is greater than the toppings for the deal, then...",
 * Demonstrate that you cannot change the value of a const. Like the example below:
 ```javascript
 const SOME_CONST = 6;
@@ -101,16 +101,58 @@ processArray( undefined ); //cannot read property '.length' of undefined.
 The error of `cannot read property '.length' of undefined` comes from the fact that we are trying to read .length within the console log, not that we passed in nothing or undefined itself. Actually passing the arguments or not is something that Javascript allows us to do. 
 
 ## Default Parameter Values
-We can now create and assign default parameters to our function arguments! If the value is supplied, it supplied value will override the default set. We simply assign the default value in the `function signature`. For example `function processArray(array = []){...}`
+We can now create and assign default parameters to our function arguments! If the value is supplied, it supplied value will override the default set. We simply assign the default value in the `function signature`. For example `function processArray(array = []){...}`. Note that supplying an undefined value *WILL NOT* override the default parameter value. Meaning that an undefined supplied value will become the default parameter value.
 
 Looking at the previous example, we can see how the logs will now be different:
 ```javascript
-function processArray(array){
+function processArray(array = []){
   console.log(array.length);
   //do things to the array
 }
 
 processArray( [1,2,3] ); // logs '3'
 processArray( ); //logs '0'
-processArray( undefined ); //cannot read property '.length' of undefined.
+processArray( undefined ); //logs '0'
 ```
+
+### Instructor Notes
+* Take a moment to clean up the phrase 'function signature' with students,
+* Point out that default parameters are available in other languages,
+* Type is implied with the default parameters, but another type could be entered at the time of the function call (so it does not fix everything)
+
+## Configuration Objects and Named Parameters
+A common pattern in Javascript is to accept a configuration object as an argument to a function. 
+
+For example:
+```
+function setupUser(configObject){
+  var name = configObject.name;
+  var admin = configObject.admin;
+  //do things
+}
+
+setupUser({name: "Scott", admin: true});
+```
+
+From what we learned about default parameters, we may be tempted to additionally use a default value for the `configObject` to at least check whether or not the supplied argument is an object. Which might look something like this:
+```
+function setupUser(configObject = {}){
+  var name = configObject.name;
+  var admin = configObject.admin;
+  //do things
+}
+
+setupUser({name: "Scott", admin: true});
+```
+
+But we can take this up another step. We can instead use the declaration names within an object as an argument to the function itself. Check it out: 
+
+```
+function setupUser( {name,admin} ){
+  //do things
+}
+
+setupUser({name: "Scott", admin: true});
+```
+
+Inside the function, we have access to the `name` and `admin` values, already declared as we did in the examples above. As a bonus, the function signature is more descript about that the function accepts!
