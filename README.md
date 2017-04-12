@@ -165,4 +165,31 @@ function setupUser( {name,admin} = {} ){
 setupUser({name: "Scott", admin: true});
 ```
 
+## Rest Parameters
+A Rest parameter allows us to accept an indefinite amount of arguments and puts them into an array. We access the rest parameter with the `...` leading syntax followed by what we would like to call the param. 
 
+For example:
+```javascript
+function restFunction(...list){
+    for(let i = 0; i < list.length; i++){
+        console.log(list[i]);
+    }
+}
+
+restFunction("Scott", "Fred", "Mark", "Taylor", "Chris");
+```
+
+Additionally, we can put arguments in front of the rest parameter to accepted needed arguments that should not be considered in the rest array.
+
+For example:
+```javascript
+function restFunction(instructor = "Unassigned", ...list){
+  for(let i = 0; i < list.length; i++){
+    console.log(list[i]); // Logs list without 'Scott'
+  }
+
+  console.log(instructor); // Logs 'Scott'
+}
+
+restFunction("Scott", "Fred", "Mark", "Taylor", "Chris");
+```
