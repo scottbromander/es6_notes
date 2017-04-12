@@ -124,7 +124,7 @@ processArray( undefined ); //logs '0'
 A common pattern in Javascript is to accept a configuration object as an argument to a function. 
 
 For example:
-```
+```javascript
 function setupUser(configObject){
   var name = configObject.name;
   var admin = configObject.admin;
@@ -135,7 +135,7 @@ setupUser({name: "Scott", admin: true});
 ```
 
 From what we learned about default parameters, we may be tempted to additionally use a default value for the `configObject` to at least check whether or not the supplied argument is an object. Problem is, we are still writting assignment code, Which might look something like this:
-```
+```javascript
 function setupUser(configObject = {}){
   var name = configObject.name;
   var admin = configObject.admin;
@@ -147,7 +147,7 @@ setupUser({name: "Scott", admin: true});
 
 But we can take this up another step. We can instead use the declaration names within an object as an argument to the function itself. Check it out: 
 
-```
+```javascript
 function setupUser( {name,admin} ){
   //do things
 }
@@ -155,4 +155,14 @@ function setupUser( {name,admin} ){
 setupUser({name: "Scott", admin: true});
 ```
 
-Inside the function, we have access to the `name` and `admin` values, already declared as we did in the examples above. As a bonus, the function signature is more descript about that the function accepts!
+Inside the function, we have access to the `name` and `admin` values, already declared as we did in the examples above. As a bonus, the function signature is more descript about that the function accepts! Note that as a final step, we can still assign a default parameter. 
+
+```javascript
+function setupUser( {name,admin} = {} ){
+  //do things
+}
+
+setupUser({name: "Scott", admin: true});
+```
+
+
