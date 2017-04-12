@@ -111,6 +111,6 @@ function processArray(array){
 }
 
 processArray( [1,2,3] ); // logs '3'
-processArray( ); logs '0'
+processArray( ); //logs '0'
 processArray( undefined ); //cannot read property '.length' of undefined.
 ```
