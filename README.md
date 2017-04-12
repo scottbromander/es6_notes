@@ -84,3 +84,19 @@ const SOME_CONST = 6;
 SOME_CONST = 5;
 ```
 
+## Function Arguments
+Javascript is very flexible when it comes to working with arguments within functions. We can pass in extra arguments or even omit arguments all together on functions that would normally accept arguments. In these cases, Javascript will not produce errors. 
+
+Consider this:
+```
+function processArray(array){
+  console.log(array.length);
+  //do things to the array
+}
+
+processArray( [1,2,3] ); // logs '3'
+processArray( ); //cannot read property '.length' of undefined.
+processArray( undefined ); //cannot read property '.length' of undefined.
+```
+
+The error of `cannot read property '.length' of undefined` comes from the fact that we are trying to read .length within the console log, not that we passed in nothing or undefined itself. Actually passing the arguments or not is something that Javascript allows us to do. 
