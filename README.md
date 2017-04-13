@@ -322,3 +322,5 @@ let order = {name, price, sides};
 console.log(order.name, order.price, order.sides);
 ```
 
+## [Object Destructing](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+
