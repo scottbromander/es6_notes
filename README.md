@@ -300,4 +300,25 @@ var scott = new PersonES6();
 ```
 Arrow functions bind to the scope of where they are defined, not where we are used. This is known as `Lexical Binding`.  
 
+## Object Initialization Shorthand
+
+We now have a shorthand method for creating objects that have key value pairs that match the same name. First, let's look at some ES5 syntax to understand where the upgrade comes from:
+```javascript
+let name = 'Hamburger';
+let price = 7.99;
+let sides = ['Fries', 'Coleslaw'];
+
+let order = {name: name, price: price, sides: sides};
+console.log(order.name, order.price, order.sides);
+```
+
+As you can see, there is a little bit of repetition in the creation of the order variable. In the object we create, we find ourself repeating the key value pairs. If we want them key and the value to be the same (value pointing to another variable of course), we can use a shorthand:
+```javascript
+let name = 'Hamburger';
+let price = 7.99;
+let sides = ['Fries', 'Coleslaw'];
+
+let order = {name, price, sides};
+console.log(order.name, order.price, order.sides);
+```
 
