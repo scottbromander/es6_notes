@@ -323,6 +323,8 @@ console.log(order.name, order.price, order.sides); //logs 'Hamburger', 3.99, ['F
 ```
 
 ## [Object Destructing](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+
+### Array
 Object destructing allows us to assign multiple values based on returns of multiple values. Below are some examples of how this works:
 ```javascript
 let someArray = ['Hamburger', 3.99, ['Fries', 'Coleslaw']];
@@ -340,3 +342,4 @@ let someArray = ['Hamburger', 3.99, ['Fries', 'Coleslaw']];
 let [name, , sides] = someArray;
 console.log(name, sides); //logs 'Hamburger', ['Fries', 'Coleslaw']
 ```
+
