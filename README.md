@@ -323,4 +323,20 @@ console.log(order.name, order.price, order.sides);
 ```
 
 ## [Object Destructing](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+Object destructing allows us to assign multiple values based on returns of multiple values. Below are some examples of how this works:
+```javascript
+let someArray = ['Hamburger', 3.99, ['Fried', 'Coleslaw']];
 
+let [name, price, sides] = someArray;
+console.log(name, price, sides);
+```
+
+Above, you can see that we defined an array with three values, a String, a Number, and an Array. Then we use a variable declaration to create three new variables with bracket syntax and then set it equal to an array. The three new values then become equal to the three values from the array.
+
+We can also skip variables by omitting a variable name:
+```javascript
+let someArray = ['Hamburger', 3.99, ['Fried', 'Coleslaw']];
+
+let [name, , sides] = someArray;
+console.log(name, sides);
+```
