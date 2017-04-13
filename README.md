@@ -165,7 +165,7 @@ function setupUser( {name,admin} = {} ){
 setupUser({name: "Scott", admin: true});
 ```
 
-## Rest Parameters
+## [Rest Parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters)
 A Rest parameter allows us to accept an indefinite amount of arguments and puts them into an array. We access the rest parameter with the `...` leading syntax followed by what we would like to call the param. 
 
 For example:
@@ -194,7 +194,7 @@ function restFunction(instructor = "Unassigned", ...list){
 restFunction("Scott", "Fred", "Mark", "Taylor", "Chris");
 ```
 
-## Spread Operators
+## [Spread Operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator)
 Spread operators have a similar syntax as rest parameters, however instead of using the `...` syntax in a function argument, we use it in the function call. The functional difference is that it take an array of values and sends them to the function as individual arguments into the function.
 
 Consider this:
@@ -235,7 +235,7 @@ function createEmployeeObject(name = 'Un-named', employeeNumber = '00000', salar
 createEmployeeObject(...atticus, 4, 5, 6);
 ```
 
-## Arrow Functions and Lexical Binding
+## [Arrow Functions and Lexical Binding](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 Arrow functions is one of the most exciting new features of ES6. At first glance, it seems like a fancy new way to create functions. But below the surface, is a very important consideration around the binding of 'this' as it relates to method calls. But more on that in a second.
 
 Lets take a look at the same function, defined in both ES5 and ES6:
@@ -300,7 +300,7 @@ var scott = new PersonES6();
 ```
 Arrow functions bind to the scope of where they are defined, not where we are used. This is known as `Lexical Binding`.  
 
-## Object Initialization Shorthand
+## [Object Initialization Shorthand](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer)
 
 We now have a shorthand method for creating objects that have key value pairs that match the same name. First, let's look at some ES5 syntax to understand where the upgrade comes from:
 ```javascript
