@@ -7,9 +7,9 @@ Consider this:
 ```javascript
 function regularFunction(){
   if(true){
-    var trueBlockVariable = "Hello";
+    var trueBlockVariable = 'Hello';
   } else {
-    var falseBlockVariable = "Goodbye!";
+    var falseBlockVariable = 'Goodbye!';
   }
   
   console.log(falseBlockVariable);
@@ -26,9 +26,9 @@ Consider this:
 ```javascript
 function regularFunction(){
   if(true){
-    let trueBlockVariable = "Hello";
+    let trueBlockVariable = 'Hello';
   } else {
-    let falseBlockVariable = "Goodbye!";
+    let falseBlockVariable = 'Goodbye!';
   }
   
   console.log(falseBlockVariable);
@@ -131,7 +131,7 @@ function setupUser(configObject){
   //do things
 }
 
-setupUser({name: "Scott", admin: true});
+setupUser({name: 'Scott', admin: true});
 ```
 
 From what we learned about default parameters, we may be tempted to additionally use a default value for the `configObject` to at least check whether or not the supplied argument is an object. Problem is, we are still writting assignment code, Which might look something like this:
@@ -142,7 +142,7 @@ function setupUser(configObject = {}){
   //do things
 }
 
-setupUser({name: "Scott", admin: true});
+setupUser({name: 'Scott', admin: true});
 ```
 
 But we can take this up another step. We can instead use the declaration names within an object as an argument to the function itself. Check it out: 
@@ -152,7 +152,7 @@ function setupUser( {name,admin} ){
   //do things
 }
 
-setupUser({name: "Scott", admin: true});
+setupUser({name: 'Scott', admin: true});
 ```
 
 Inside the function, we have access to the `name` and `admin` values, already declared as we did in the examples above. As a bonus, the function signature is more descript about that the function accepts! Note that as a final step, we can still assign a default parameter. 
@@ -162,7 +162,7 @@ function setupUser( {name,admin} = {} ){
   //do things
 }
 
-setupUser({name: "Scott", admin: true});
+setupUser({name: 'Scott', admin: true});
 ```
 
 ## [Rest Parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters)
@@ -176,14 +176,14 @@ function restFunction(...list){
     }
 }
 
-restFunction("Scott", "Fred", "Mark", "Taylor", "Chris");
+restFunction('Scott', 'Fred', 'Mark', 'Taylor', 'Chris');
 ```
 
 Additionally, we can put arguments in front of the rest parameter to accepted needed arguments that should not be considered in the rest array.
 
 For example:
 ```javascript
-function restFunction(instructor = "Unassigned", ...list){
+function restFunction(instructor = 'Unassigned', ...list){
   for(let i = 0; i < list.length; i++){
     console.log(list[i]); // Logs list without 'Scott'
   }
@@ -191,7 +191,7 @@ function restFunction(instructor = "Unassigned", ...list){
   console.log(instructor); // Logs 'Scott'
 }
 
-restFunction("Scott", "Fred", "Mark", "Taylor", "Chris");
+restFunction('Scott', 'Fred', 'Mark', 'Taylor', 'Chris');
 ```
 
 ## [Spread Operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator)
@@ -199,7 +199,7 @@ Spread operators have a similar syntax as rest parameters, however instead of us
 
 Consider this:
 ```javascript
-let atticus = ["Atticus", 392811, 94000];
+let atticus = ['Atticus', 392811, 94000];
 
 function createEmployeeObject(array){
   var name = array[0];
@@ -213,7 +213,7 @@ createEmployeeObject(atticus);
 
 In the above example, we see the array of information passed into the function call, then inside the function the array is accepted. That array is then used to assign value to variables created in the function. As we have seen in ES6 before, we know that this pattern of boilerplate variable assignment is not ideal. So instead, we can pair up the spread operator with stated arguments. For example:
 ```javascript 
-let atticus = ["Atticus", 392811, 94000];
+let atticus = ['Atticus', 392811, 94000];
 
 function createEmployeeObject(name = 'Un-named', employeeNumber = '00000', salary = '10000'){
   //Do things
@@ -224,7 +224,7 @@ createEmployeeObject(...atticus);
 
 In the example above, we can see that the variable creation is handled in the function signature. The spread operator can them separate them into different arguments. Additionally, we can pair both the rest and spread operator together for some great flexibility. Run the following code and notice how the console logs are different:
 ```javascript
-let atticus = ["Atticus", 392811, 94000];
+let atticus = ['Atticus', 392811, 94000];
 
 function createEmployeeObject(name = 'Un-named', employeeNumber = '00000', salary = '10000', ...extras){
     console.log(name, employeeNumber, salary); // logs Atticus, 392811, 94000
@@ -242,12 +242,12 @@ Lets take a look at the same function, defined in both ES5 and ES6:
 ```javascript
 // ES5
 var normalFunction = function(){
-  console.log("Normal function");
+  console.log('Normal function');
 }
 
 //ES6
 var arrowFunction = () => {
-  console.log("Arrow function");
+  console.log('Arrow function');
 }
 ```
 
@@ -257,12 +257,12 @@ Let's look at the same example, but with an argument in the function as well:
 ```javascript
 // ES5
 var normalFunction = function(message){
-  console.log("Normal function: ", message);
+  console.log('Normal function: ', message);
 }
 
 //ES6
 var arrowFunction = (message) => {
-  console.log("Arrow function: ", message);
+  console.log('Arrow function: ', message);
 }
 ```
 Now the short creation of functions is cool, but not the only point of arrow functions. One of the most common problems in Javascript, is the creation of Objects that have methods. More specifically, how that method is able to access the objects properties to which the method belongs. Let's look at an example of the problem below in ES5:
