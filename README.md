@@ -343,3 +343,27 @@ let [name, , sides] = someArray;
 console.log(name, sides); //logs 'Hamburger', ['Fries', 'Coleslaw']
 ```
 
+## Method Initializer Shorthand
+
+```javascript 
+//Old
+function Dog(name){
+  return {
+    name,
+    bark : function(){
+      alert('Bark!');
+    }
+  }
+}
+
+//New
+//Old
+function Dog(name){
+  return {
+    name,
+    bark(){
+      alert('Bark!');
+    }
+  }
+}
+```
