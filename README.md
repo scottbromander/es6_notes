@@ -369,7 +369,7 @@ function Dog(name){
 ```
 
 
-## Tempalte Strings
+## Template Strings
 
 ```javascript
 //Old
@@ -383,3 +383,15 @@ function Person(first, last){
 }
 
 ```
+
+Also, multiline strings are supported with the back ticks:
+```javascript
+let scottsJoke = `Two muffins are sitting in an oven.
+
+The first muffin says to the second 'Its really hot in here'.
+
+The second muffin says 'AH! A TALKING MUFFIN!'`
+
+console.log(scottsJoke);
+```
+
