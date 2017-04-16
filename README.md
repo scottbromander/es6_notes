@@ -367,3 +367,19 @@ function Dog(name){
   }
 }
 ```
+
+
+## Tempalte Strings
+
+```javascript
+//Old
+function Person(first, last){
+  let fullname = first + ' ' + last;
+}
+
+//New
+function Person(first, last){
+  let fullname = `${first} ${last}`;
+}
+
+```
