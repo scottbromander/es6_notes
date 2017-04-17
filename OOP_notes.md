@@ -97,3 +97,16 @@ Faction NEEDS this idea of abstraction to function at all. Often times we find o
 If we were writing code, we do not write a class for each and every Bank Account let's say, but rather we establish a base in which all bank accounts derive from.
 
 Abstraction is at the core of the other fundamentals of Object Orientated Programming, and we will see how it plays a critical role.
+
+## Encapsulation
+
+Surrounding something. Protecting contents. Taking attributes and behaviors, then bundling them up in a class. But it’s more than just the idea of class. It is about the protection of of those attributes and behaviors. This is referred to as ‘data hiding’. 
+
+The main concept of data hiding, is that you are ONLY revealing attributes and behaviors that are ABSOLUTELY necessary in order for your application to work.  
+
+A simple example of this is a Bank Account application. You should not be able to access the property of balance directly from any other part of the application. You should have to go through the deposit or withdraw methods in order to change the balance. This is because there are other considerations that need to be made. If you were able to subtract from the balance from anywhere in the application, then you would probably need to check for an overdraft in each place you made negative adjustments. It would be so much easier if you just went through one method to do it. 
+
+This means that the balance cannot be changed directly, but rather just through the withdraw and deposit methods which can reach inside its own class to manipulate the balance, with the other considerations that go along with it.
+
+Another example is a toaster. A toaster is fairly simple. Adjust time, then push the handle down to toast. The time mechanism is something that you have direct access to, a property you can manipulate directly. But the inner workings of a toaster are not available to you. You actually have no idea how the time dial changes the inner workings of the toaster, or rather, how that dial fits into the mechanics of the toaster. Same for the handle. You push it down, but inside of the toaster, you could probably not speak to exactly what the toaster does to start the warming process of the bread. Changing the inner mechanisms of the toaster probably do not change the inputs of the toaster itself. Unless of course, you got a better toaster.
+
