@@ -84,3 +84,16 @@ An instance is an individual creation from a Class. While Whiteboard Marker migh
 
 ### Types and Classes
 In most languages, the language itself comes with its own collection of Classes that are already available to us. In Javascript, we may be familiar with the term `type` or `object`. We work with these objects all the time and because of the ease of Javascript, we skip right past the parts that make us think of how they began as classes. For example, we instantiate Numbers, Strings, and Arrays all the time. But because of Javascript shorthand, we miss the critical clues that tell use we are using a Blueprint of sorts. 
+
+## Abstraction
+Abstraction has to do with the 'idea' of something. If I said to you the word 'House'. You would know what I am talking about. There are a ton of details that would need to be sussed out, but you ‘have the general idea’ of what I am talking about. 
+
+Abstraction just focuses on the essentials, and discards the unimportant pieces of information. We are not focusing on the type of house, just rather what the word represents. We do this all the time in the real world. Chances are great, that as you came together this morning and asked the question “How was your weekend? What did you do?”, as the person described their weekend, you did not need to stop them every second to hop into the minutiae of every detail, but rather listened to the story and were able to track fine.
+
+The phrase “I went to my brothers house for Sunday brunch” prompts a general image in your mind that does not need the specific details of the brother, his house, and what was for brunch. 
+
+Faction NEEDS this idea of abstraction to function at all. Often times we find ourselves drawn into faction because the writer does a great job describing the needed details to frame the story, but also allows the reader's imagination to fill in the blanks.
+
+If we were writing code, we do not write a class for each and every Bank Account let's say, but rather we establish a base in which all bank accounts derive from.
+
+Abstraction is at the core of the other fundamentals of Object Orientated Programming, and we will see how it plays a critical role.
