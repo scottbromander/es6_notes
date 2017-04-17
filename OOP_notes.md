@@ -21,3 +21,32 @@ Attributes define the state of an object.
 Behavior defines how the objects acts, or ‘things they can do’.
 
 In the real world, we quickly grasp to physical things that we can touch and see when describing objects. But in applications, we can take it further. A Bank Account is a thing that we cannot touch, but it certainly is an object. It has an Identity, “Scotts Bank Account”, it has properties, “$370 dollars”, and it has behaviors it can execute, “Collect Interested”, “Overdraft”, and so on. Each of those behaviors can change the state of itself, or other objects within the application.
+
+Perhaps a good way to think about what an object can be, is to latch onto the word “Noun”. Is the thing you are trying to describe a noun? Or, could you put the word “The” in front of it? 
+
+## Class
+Class and Objects go hand in hand. But Classes take it a level up. Classes describe what an object can be, but it is not the object itself. You can think of a class as a Blueprint for an Object. When I say the word ‘Apple’, you begin thinking about the look and characteristics of an Apple, but you are not thinking about a specific apple. Unless of course, it was a particularly good apple. 
+
+For programmers, we build the Class (the blueprint) and we use that Class to build the object. Or in our Apple description, we might have the class for an apple, then create millions of apples from that class. 
+
+### Creating a Class
+When we approach the creation of the class, we think about those three things mentioned above: Identity, Attributes, and Behavior. 
+
+* Identity - What is its name? Apple, Bank Account, Person, etc. 
+* Attributes - Size, Color, Amount, Weight, Height, etc. 
+* Behaviors - Grow, Deposit, Withdraw, Sleep, Eat, etc. 
+
+But you may see different words associated to these three ‘things’. You may not see ‘Name’, but ‘Type’ for example. Attributes may be described as ‘Properties’. And Behaviors may be referred to as ‘Methods’ or ‘Operations’. 
+
+If we were to ground this in the Javascript concepts we know, we could look at an example of a class with our current syntax like so:
+
+```javascript
+function AudioPlayer(currentSong, currentTime = 0){
+  return {
+    currentSong,
+    currentTime,
+    play(){},
+    stop(){}
+  }
+}
+```
