@@ -36,7 +36,7 @@ When we approach the creation of the class, we think about those three things me
 * Attributes - Size, Color, Amount, Weight, Height, etc. 
 * Behaviors - Grow, Deposit, Withdraw, Sleep, Eat, etc. 
 
-But you may see different words associated to these three ‘things’. You may not see ‘Name’, but ‘Type’ for example. Attributes may be described as ‘Properties’. And Behaviors may be referred to as ‘Methods’ or ‘Operations’. 
+But you may see different words associated to these three ‘things’. You may not see ‘Name’, but `Type` for example. Attributes may be described as `Properties`. And Behaviors may be referred to as `Methods` or `Operations`. 
 
 If we were to ground this in the Javascript concepts we know, we could look at an example of a class with our current syntax like so:
 
@@ -50,3 +50,13 @@ function AudioPlayer(currentSong, currentTime = 0){
   }
 }
 ```
+
+We can actually diagram these as well. We can think of it almost as a card with three sections, broken apart by how we have been describing these three things. Identity on top, Attributes in the middle, and Behaviors at the bottom:
+
+| AudioPlayer        | 
+| ------------- |
+| currentSong      | 
+| currentTime    | 
+| ------------- |
+| play()   | 
+| stop()      | 
