@@ -53,10 +53,28 @@ function AudioPlayer(currentSong, currentTime = 0){
 
 We can actually diagram these as well. We can think of it almost as a card with three sections, broken apart by how we have been describing these three things. Identity on top, Attributes in the middle, and Behaviors at the bottom:
 
-| AudioPlayer        | 
+| AudioPlayer   | 
 | ------------- |
 | currentSong   
   currentTime| 
 | ------------- |
 | play()   | 
-| stop()      | 
+| stop()   | 
+
+In this example, we see that we have an Audio Player Class described above. If we were to deploy our application and allow users to paly their own songs on their own `instance` of an audio player, we would have different properties and names. 
+
+| ScottsAudioPlayer   | 
+| ------------- |
+| Sleep Apnea   
+  0:37| 
+| ------------- |
+| play()   | 
+| stop()   | 
+
+| RachaelsAudioPlayer   | 
+| ------------- |
+| Everybody   
+  1:24| 
+| ------------- |
+| play()   | 
+| stop()   | 
