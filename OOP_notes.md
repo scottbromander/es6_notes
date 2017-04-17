@@ -78,3 +78,9 @@ In this example, we see that we have an Audio Player Class described above. If w
 | ------------- |
 | play()   | 
 | stop()   | 
+
+### Instances
+An instance is an individual creation from a Class. While Whiteboard Marker might be the class, each of these markers are individual `instances` of the class. The process of creation of an instance from a class, is an `instantiation`. 
+
+### Types and Classes
+In most languages, the language itself comes with its own collection of Classes that are already available to us. In Javascript, we may be familiar with the term `type` or `object`. We work with these objects all the time and because of the ease of Javascript, we skip right past the parts that make us think of how they began as classes. For example, we instantiate Numbers, Strings, and Arrays all the time. But because of Javascript shorthand, we miss the critical clues that tell use we are using a Blueprint of sorts. 
