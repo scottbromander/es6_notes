@@ -55,8 +55,8 @@ We can actually diagram these as well. We can think of it almost as a card with 
 
 | AudioPlayer        | 
 | ------------- |
-| currentSong      | 
-| currentTime    | 
+| currentSong   
+  currentTime| 
 | ------------- |
 | play()   | 
 | stop()      | 
