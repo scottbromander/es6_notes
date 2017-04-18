@@ -489,3 +489,46 @@ newAudioPlayer.play();
 Notice that we create the object just as we did before. Another thing to notice is that the `this` keyword is properly bound to the class scope. Meaning that we can access properties within the class with the `this` keyword. 
 
 Note that Javascript does not have any access modifers, so we are unable to control `public` and `private` methods and variables through ES6 syntax. In fact, there is no addition "power" in the Class syntax above. Either the stated ES5 or ES6 methods are acceptable, but the ES6 syntax is closer to what you would see in other languages. 
+
+## Inheritance
+We can extend the functionality from one class to the next by using the `extend` keyword. This will cause the `subclass` to inherit its functionality from the `baseclass`. Let's take a look at an example below:
+
+```javascript 
+class MarketItem {
+
+  constructor(name, price, imgUrl){
+    this.name = name;
+    this.price = price;
+    this.imgUrl = imgUrl;
+  }
+
+  changePrice(){
+    this.price++;
+    console.log('Price Changed! ', this.price);
+  }
+}
+
+class Fruit extends MarketItem { 
+
+  constructor(name, price, imgUrl, freshness){
+    super(name, price, imgUrl);
+    this.freshness = freshness;
+  }
+
+  changePrice(){
+    super.changePrice();
+    this.freshness--;
+    if(this.freshness <=0){
+      this.price = 0;
+      console.log('Food spoiled: ', this.price);
+    } else {
+      console.log('Freshness: ', this.freshness);
+    }
+  }
+}
+
+var apple = new Fruit('Apple', 1, 'something.jpg', 2);
+console.log(apple);
+apple.changePrice();
+
+```
