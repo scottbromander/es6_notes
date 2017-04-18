@@ -412,3 +412,78 @@ let [a,b,c] = people;
 console.log(a,b,c);
 ```
 
+### Array with Function Returns and Destructing Variables
+Similar to the examples above, this also works with functions that return arrays as well:
+```javascript
+function basePizzaToppings(){
+  let toppings = ['Sausage', 'Cheese', 'Pepperoni'];
+  return toppings;
+}
+
+let [a,b,c] = basePizzaToppings();
+console.log(a,b,c);
+```
+
+## 'For Of' Loops
+A very common task is to iterate over arrays to complete some task. Using a 'For In' loop allows us to go through each item in an array and do something with it, however it has an extra step:
+```javascript
+let people = ['Scott', 'Chris', 'Kris'];
+
+for(let index in people){
+  console.log(people[index]);
+}
+```
+
+In the above step, we track the `index` and use it to get the specific person out of the people array. It would be much handier if we were able to drop a step since this is such a common set. Enter 'For Of' loops:
+```javascript
+let people = ['Scott', 'Chris', 'Kris'];
+
+for(let person of people){
+  console.log(person);
+}
+```
+
+## Classes
+A common approach to encapsulation within Javascript is to use a combination of constructor functions and assigning methods to the prototype:
+
+```javascript
+function AudioPlayer(currentSong){
+  this.currentSong = currentSong;
+  this.currentTime = 0;
+}
+
+AudioPlayer.prototype.play = function(){ ... } ;
+AudioPlayer.prototype.stop = function(){ ... } ;
+
+let newAudioPlayer = new AudioPlayer('Sleep Apnea');
+newAudioPlayer.play();
+```
+
+But in ES6 syntax, we have a much more elegant way to define our classes. To those coming from other OOP languages, the syntax is much more familiar. It even comes with a `constructor` method that is invoked whenever an instance of the class created!
+
+Here is the same class defined above in the new syntax:
+```javascript
+class AudioPlayer {
+
+  constructor(currentSong){
+    this.currentSong = currentSong;
+    this.currentTime = 0;
+  }
+  
+  play(){
+    //  ...
+    console.log("Playing " + this.currentSong + "!");
+  }
+  
+  stop(){
+    //  ...
+    console.log("Stopping " + this.currentSong + "!");
+  }
+  
+}
+
+let newAudioPlayer = new AudioPlayer('Sleep Apnea');
+newAudioPlayer.play();
+```
+
+Notice that we create the object just as we did before. Another thing to notice is that the `this` keyword is properly bound to the class scope. Meaning that we can access properties within the class with the `this` keyword. 
