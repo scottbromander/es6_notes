@@ -110,3 +110,30 @@ This means that the balance cannot be changed directly, but rather just through 
 
 Another example is a toaster. A toaster is fairly simple. Adjust time, then push the handle down to toast. The time mechanism is something that you have direct access to, a property you can manipulate directly. But the inner workings of a toaster are not available to you. You actually have no idea how the time dial changes the inner workings of the toaster, or rather, how that dial fits into the mechanics of the toaster. Same for the handle. You push it down, but inside of the toaster, you could probably not speak to exactly what the toaster does to start the warming process of the bread. Changing the inner mechanisms of the toaster probably do not change the inputs of the toaster itself. Unless of course, you got a better toaster.
 
+## Inheritance
+When it comes to working with Classes, we may run into situations where two objects could be similar, and even categorized under one one class, but they are different enough to each need special properties, methods, or both. Thinking about a Bike and a Motorcycle, we can conclude that they are very different, but have some common attributes and behaviors. Both have wheels, are used as modes of transportation, but there are also differences. Such as mode of power, the need for fuel, and so on. 
+
+So in this case, we could create a ‘Vehicle’ class. We could then find the commonalities and draw out the properties and methods that the two share:
+
+| Vehicle   | 
+| ------------- |
+| numWheels | 
+| ------------- |
+| moveForward() 
+  stop()| 
+  
+But in this example, we would want to create two different objects from this Vehicle class, but lets consider the need to create 100's of Bike and 100's of Motorcycles. We should have a class for each of those two. But luckily, we don't need to start from scratch when we do this. We do not need to create two different classes that share some things but not others. We can `extend` the Vehicle class we created, and allow the two new classes to automatically have the properties and methods of the Vehicle class. 
+
+| Motorcycle : Vehicle   | 
+| ------------- |
+| engine   
+  fuelLevel| 
+| ------------- |
+| startEngine() 
+  stopEngine()| 
+  
+  
+| Bike : Vehicle   | 
+| ------------- |
+| hasKickstand| 
+| ------------- |
