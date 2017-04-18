@@ -491,7 +491,7 @@ Notice that we create the object just as we did before. Another thing to notice 
 Note that Javascript does not have any access modifers, so we are unable to control `public` and `private` methods and variables through ES6 syntax. In fact, there is no addition "power" in the Class syntax above. Either the stated ES5 or ES6 methods are acceptable, but the ES6 syntax is closer to what you would see in other languages. 
 
 ## Inheritance
-We can extend the functionality from one class to the next by using the `extend` keyword. This will cause the `subclass` to inherit its functionality from the `baseclass`. Let's take a look at an example below:
+We can extend the functionality from one class to the next by using the `extend` keyword. This will cause the `subclass` (or`childclass`) to inherit its functionality from the `superclass` (or `parentclass`). Let's take a look at an example below:
 
 ```javascript 
 class MarketItem {
