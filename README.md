@@ -395,3 +395,20 @@ The second muffin says 'AH! A TALKING MUFFIN!'`
 console.log(scottsJoke);
 ```
 
+## Array with Destructing Variables
+We can use destructing to assign multiple values from an array to local variables. Common case for variable assignment from Arrays:
+```javascript
+let people = ['Scott', 'Chris', 'Kris'];
+let a = people[0];
+let b = people[1];
+let c = people[2];
+console.log(a,b,c);
+```
+
+But we can use Destructing Variables to shorten the assignment:
+```javascript
+let people = ['Scott', 'Chris', 'Kris'];
+let [a,b,c] = people;
+console.log(a,b,c);
+```
+
