@@ -487,3 +487,5 @@ newAudioPlayer.play();
 ```
 
 Notice that we create the object just as we did before. Another thing to notice is that the `this` keyword is properly bound to the class scope. Meaning that we can access properties within the class with the `this` keyword. 
+
+Note that Javascript does not have any access modifers, so we are unable to control `public` and `private` methods and variables through ES6 syntax. In fact, there is no addition "power" in the Class syntax above. Either the stated ES5 or ES6 methods are acceptable, but the ES6 syntax is closer to what you would see in other languages. 
