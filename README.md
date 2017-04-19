@@ -533,5 +533,5 @@ apple.changePrice();
 
 ```
 
-## Modules
+## [Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
 `Waiting until to see if we have enough time to cover Babel. As module support is not native to browsers`
