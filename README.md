@@ -423,7 +423,7 @@ let [a,b,c] = basePizzaToppings();
 console.log(a,b,c);
 ```
 
-## ['For Of'] Loops(https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
+## [For Of Loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
 A very common task is to iterate over arrays to complete some task. Using a 'For In' loop allows us to go through each item in an array and do something with it, however it has an extra step:
 ```javascript
 let people = ['Scott', 'Chris', 'Kris'];
