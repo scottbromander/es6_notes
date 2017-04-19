@@ -1,6 +1,6 @@
 # ES6 / ES 2015
 
-## LET Declarations
+## [LET Declarations](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
 Let is a new way to declare variables and have them scoped to the nearest code block (and not to the nearest function, as with the standard `var` declaration). 
 
 Consider this:
@@ -42,8 +42,7 @@ This will produce an error of 'not defined'. This matches our expectation of wha
 * Make sure that the students understand the difference between 'undefined' and 'not defined',
 * One of the considerations that need to be made is whether or not an error is actually better than undefined for the need of the application.
 
-## CONST Declarations
-
+## [CONST Declarations](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
 Const declarations allow us to create variables that cannot change. Which on the surface seems like a bad idea, but it allows us to constrain and address 'magic numbers'. 
 
 Consider this example that checks the number of toppings on a pizza order. If its over three toppings, then it does not qualify for a special:
@@ -100,7 +99,7 @@ processArray( undefined ); //cannot read property '.length' of undefined.
 
 The error of `cannot read property '.length' of undefined` comes from the fact that we are trying to read .length within the console log, not that we passed in nothing or undefined itself. Actually passing the arguments or not is something that Javascript allows us to do. 
 
-## Default Parameter Values
+## [Default Parameter Values](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)
 We can now create and assign default parameters to our function arguments! If the value is supplied, it supplied value will override the default set. We simply assign the default value in the `function signature`. For example `function processArray(array = []){...}`. Note that supplying an undefined value *WILL NOT* override the default parameter value. Meaning that an undefined supplied value will become the default parameter value.
 
 Looking at the previous example, we can see how the logs will now be different:
@@ -343,7 +342,7 @@ let [name, , sides] = someArray;
 console.log(name, sides); //logs 'Hamburger', ['Fries', 'Coleslaw']
 ```
 
-## Method Initializer Shorthand
+## [Method Initializer Shorthand](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer)
 
 ```javascript 
 //Old
@@ -369,7 +368,7 @@ function Dog(name){
 ```
 
 
-## Template Strings
+## [Template Strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
 
 ```javascript
 //Old
@@ -424,7 +423,7 @@ let [a,b,c] = basePizzaToppings();
 console.log(a,b,c);
 ```
 
-## 'For Of' Loops
+## ['For Of'] Loops(https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
 A very common task is to iterate over arrays to complete some task. Using a 'For In' loop allows us to go through each item in an array and do something with it, however it has an extra step:
 ```javascript
 let people = ['Scott', 'Chris', 'Kris'];
@@ -443,7 +442,7 @@ for(let person of people){
 }
 ```
 
-## Classes
+## [Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
 A common approach to encapsulation within Javascript is to use a combination of constructor functions and assigning methods to the prototype:
 
 ```javascript
