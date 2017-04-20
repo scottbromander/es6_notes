@@ -12,8 +12,10 @@ function regularFunction(){
     var falseBlockVariable = 'Goodbye!';
   }
   
-  console.log(falseBlockVariable);
+  console.log(falseBlockVariable); // undefined
 }
+
+regularFunction();
 ```
 
 In the above code, the console log will produce `undefined` rather than the normal 'not defined' error. To test this, you can try console logging any other made up variable, such as 'cats' on the very next line after the 'falseBlockVariable' console log. 
@@ -31,8 +33,10 @@ function regularFunction(){
     let falseBlockVariable = 'Goodbye!';
   }
   
-  console.log(falseBlockVariable);
+  console.log(falseBlockVariable); // error: falseBlockVariable is not defined
 }
+
+regularFunction();
 ```
 
 This will produce an error of 'not defined'. This matches our expectation of what we would see in other programming languages. 
