@@ -86,7 +86,7 @@ const SOME_CONST = 6;
 SOME_CONST = 5;
 ```
 
-## Function Arguments
+## [Function Arguments](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/arguments)
 Javascript is very flexible when it comes to working with arguments within functions. We can pass in extra arguments or even omit arguments all together on functions that would normally accept arguments. In these cases, Javascript will not produce errors. 
 
 Consider this:
