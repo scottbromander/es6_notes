@@ -1,3 +1,5 @@
+##### Note that these notes are intended for Javascript Learners looking at OOP for the first time.
+
 # Object Orientated Programming
 
 ## A Case for Object Orientated Programming
